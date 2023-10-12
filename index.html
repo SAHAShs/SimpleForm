@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <link rel="icon" href="images/verify.png" type="icon">
+    <style>
+        body {
+            background: url("images/img.JPG");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-blend-mode: darken;
+        }
+
+        form {
+            margin: 10px 250px 100px 250px;
+            column-count: 1;
+            line-height: 30px;
+        }
+
+        fieldset {
+            padding: 10px 20px 40px 20px;
+            display: grid;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            border: 2px solid black;
+        }
+
+        legend {
+            padding: 0px 20px 0px 20px;
+            margin-left: 220px;
+            font-weight: bolder;
+            font-size: 1.8rem;
+            color: #289cc0;
+            letter-spacing: 2px;
+        }
+
+        input {
+            border: 1px solid black;
+            outline: none;
+            border-radius: 8px;
+            height: 15px;
+            padding: 10px;
+            background-color: transparent;
+        }
+
+        label {
+            font-size: 1.2rem;
+            font-family: Arial, Helvetica, sans-serif;
+            color: #289cc0;
+            margin: 10px 0px 5px 0px;
+        }
+
+        #resume {
+            width: fit-content;
+            border: hidden;
+            color: red;
+        }
+        input[type="submit"] {
+            color: aliceblue;
+            background-color: #289cc0;
+            padding: 0px 20px 0px 20px;
+            height: 40px;
+            font-size: larger;
+            border: none;
+            margin-left: 10px;
+        }
+        input[type="submit"]:hover {
+            color: rgb(0, 3, 5);
+            background-color:aliceblue;
+        }
+
+        .department {
+            font-size: larger;
+            display: flex;
+            align-content: center;
+            justify-content: space-evenly;
+        }
+
+        .department label {
+            color: black;
+        }
+
+        .Skills label {
+            color: black;
+        }
+
+        input[type="radio"] {
+            margin: 10px 10px 10px 10px;
+            width: 20px;
+            height: 15px;
+        }
+
+        select {
+            padding: 5px 20px 5px 20px;
+            margin-left: 20px;
+            font-size: 1rem;
+            background-color: transparent;
+            outline: none;
+            border-radius: 8px;
+        }
+        option {
+            color: black;
+            background-color: rgb(247, 243, 239);
+        }
+
+        input[type="checkbox"] {
+            margin: 10px 10px 10px 15px;
+            height: 15px;
+            width: 20px;
+        }
+        textarea{
+            background: transparent;
+            border: 1px solid black;
+            outline: none;
+            border-radius: 8px;
+            resize: vertical;
+        }
+        header span{
+            font-size: 3rem;
+            text-transform: capitalize;
+            font-family: 'Times New Roman', Times, serif;
+            font-weight: bolder;
+            color: #289cc0;
+        }
+        header{
+            margin: 30px 0px 30px 0px;
+        }
+        .popup{
+            display: flex;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: #fff;
+            border: 1px solid #ccc;
+            padding: 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            font-size: 2rem;
+            visibility: hidden;
+            border-radius: 8px;
+        }
+        .popup button{
+            background: none;
+            border: none;
+            height: 40px;
+            font-size: larger;
+            color: aliceblue;
+            background-color: #289cc0;
+            border-radius: 8px;
+            margin-left: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+    <center>
+        <span>Form</span>
+    </center>
+</header>
+<main>
+    <form id="form">
+        <fieldset>
+            <legend>Personal Details</legend>
+            <label for="fName">First Name</label>
+            <input type="text" name="fName" id="fName" placeholder="First Name" required>
+            <label for="mName">Middle Name</label>
+            <input type="text" name="mName" id="mName" placeholder="Middle Name">
+            <label for="lName">Last Name</label>
+            <input type="text" name="lName" id="lName" placeholder="Last Name" required>
+            <label for="Emial">E-Mail</label>
+            <input type="email" name="email" id="email" placeholder="Email" required>
+            <label for="phoneNumber">Phone Number</label>
+            <input type="text" name="phoneNumber" id="phoneNumber" placeholder="Phone Number" required>
+            <label for="DOB">Date of Birth</label>
+            <input type="date" name="DOB" id="DOB" required>
+            <label for="Address">Address</label>
+            <input type="text" name="Address" id="Address" required >
+        </fieldset>
+        <fieldset>
+            <legend>Educational details</legend>
+            <label for="CollegeName">College Name</label>
+            <div>
+                <select name="clgname" id="clgname" required>
+                    <option>select</option>
+                    <option>B M S College of Engineering</option>
+                    <option>Dayananda Sagar College of Engineering</option>
+                    <option>Dr. Ambedkar Institute Of Technology</option>
+                    <option>M S Ramaiah Institute of Technology</option>
+                    <option>Malnad College of Engineering</option>
+                    <option>Others</option>
+                    <option>PESITM</option>
+                    <option>R. V. College of Engineering</option>
+                    <option>RNIST</option>
+                    <option>S J C Institute of Technology</option>
+                </select>
+            </div>
+            <label for="department">Branch / Stream</label>
+            <div class="department">
+                <div><input type="radio" name="department" checked required><label for="cse">CSE</label></div>
+                <div><input type="radio" name="department"><label for="cvl">CVL</label></div>
+                <div><input type="radio" name="department"><label for="ece">ECE</label></div>
+                <div><input type="radio" name="department"><label for="eee">EEE</label></div>
+                <div><input type="radio" name="department"><label for="ise">ISE</label></div>
+                <div><input type="radio" name="department"><label for="mech">MECH</label></div>
+            </div>
+            <label for="CGPA">CGPA</label>
+            <input type="range" id="CGPA" name="CGPA" min="0" max="10" step="any" list="markers" required>
+            <datalist id="markers">
+                <option value="0" label="0"></option>
+                <option value="1" label="1"></option>
+                <option value="2" label="2"></option>
+                <option value="3" label="3"></option>
+                <option value="4" label="4"></option>
+                <option value="5" label="5"></option>
+                <option value="6" label="6"></option>
+                <option value="7" label="7"></option>
+                <option value="8" label="8"></option>
+                <option value="9" label="9"></option>
+                <option value="10" label="10"></option>
+            </datalist>
+            <label for="yog" name="yog">Year of graduation</label>
+            <div>
+                <select name="yog" id="yog" required>
+                    <option>select</option>
+                    <option>2017</option>
+                    <option>2018</option>
+                    <option>2019</option>
+                    <option>2020</option>
+                    <option>2021</option>
+                    <option>2022</option>
+                    <option>2023</option>
+                    <option>2024</option>
+                    <option>2025</option>
+                    <option>2026</option>
+                    <option>2027</option>
+                    <option>2028</option>
+                </select>
+            </div>
+            <label for="Skills">Skills</label>
+            <div class="Skills">
+                <input type="checkbox" name="HTML"><label for="HTML">HTML</label>
+                <input type="checkbox" name="CSS"><label for="CSS">CSS</label>
+                <input type="checkbox" name="JavaScript"><label for="JavaScript">JavaScript</label>
+                <input type="checkbox" name="C"><label for="C">C</label>
+                <input type="checkbox" name="C++"><label for="c++">C++</label>
+                <input type="checkbox" name="Python"><label for="Python">Python</label>
+                <input type="checkbox" name="JAVA"><label for="JAVA">JAVA</label>
+                <input type="checkbox" name="PHP"><label for="PHP">PHP</label>
+                <input type="checkbox" name="c#"><label for="C#">C#</label>
+                <input type="checkbox" name="Ruby"><label for="Ruby">Ruby</label>
+                <input type="checkbox" name="MiscrosoftOffice"><label for="MiscrosoftOffice">Miscrosoft Office</label>
+            </div>
+            <label for="resume">Resume</label>
+            <input type="file" name="resume" id="resume">
+            <label for="others">Others</label>
+            <textarea name="others" id="others" cols="30" rows="3" placeholder="....">type here</textarea>
+        </fieldset>
+        <input type="submit" value="submit" id="submit" >
+    </form>
+    <div class="popup" id="popup">
+        <span>Thank you, Form Submitted</span>
+        <div><button type="submit" value="X" name="ok" id="popsub">X</button></div>
+    </div>
+</main> 
+<footer>
+
+</footer>
+<script>
+    var sub=document.getElementById("form");
+    var pop=document.getElementById("popup");
+    sub.addEventListener("submit",function(event){
+        event.preventDefault();
+        pop.style.visibility="visible";
+    });
+    var sub1=document.getElementById("popsub");
+    sub1.addEventListener("click",function(event){
+        event.preventDefault();
+        pop.style.visibility="hidden";
+    });
+</script>
+</body>
+</html>
