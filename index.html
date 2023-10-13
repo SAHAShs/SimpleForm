@@ -15,7 +15,7 @@
         }
 
         form {
-            margin: 10px 250px 100px 250px;
+            margin: 10px 300px 100px 300px;
             column-count: 1;
             line-height: 30px;
         }
@@ -27,16 +27,26 @@
             border-radius: 10px;
             border: 2px solid black;
         }
+        .Educational legend{
+            margin-left: 150px;
+        }
 
         legend {
             padding: 0px 20px 0px 20px;
-            margin-left: 220px;
+            margin-left: 170px;
             font-weight: bolder;
             font-size: 1.8rem;
             color: #289cc0;
             letter-spacing: 2px;
         }
 
+        
+        input:invalid{
+            border-bottom: 1px solid red;
+        }
+        input:valid{
+            border: 1px solid green;
+        }
         input {
             border: 1px solid black;
             outline: none;
@@ -47,10 +57,11 @@
         }
 
         label {
-            font-size: 1.2rem;
+            font-size: 1rem;
             font-family: Arial, Helvetica, sans-serif;
             color: #289cc0;
             margin: 10px 0px 5px 0px;
+            font-weight: bold;
         }
 
         #resume {
@@ -71,6 +82,9 @@
             color: rgb(0, 3, 5);
             background-color:aliceblue;
         }
+        input[type="submit"]:active{
+            scale: 0.9;
+        }
 
         .department {
             font-size: larger;
@@ -78,13 +92,11 @@
             align-content: center;
             justify-content: space-evenly;
         }
-
+        .Skills label,
         .department label {
             color: black;
-        }
+            font-weight: normal;
 
-        .Skills label {
-            color: black;
         }
 
         input[type="radio"] {
@@ -108,8 +120,8 @@
 
         input[type="checkbox"] {
             margin: 10px 10px 10px 15px;
-            height: 15px;
-            width: 20px;
+            height: 13px;
+            width: 23px;
         }
         textarea{
             background: transparent;
@@ -152,6 +164,13 @@
             border-radius: 8px;
             margin-left: 20px;
         }
+        .popup button:hover{
+            color: rgb(0, 3, 5);
+            background-color:rgb(186, 216, 242);
+        }
+        .popup button:active{
+            scale: 0.9;
+        }
     </style>
 </head>
 
@@ -166,26 +185,26 @@
         <fieldset>
             <legend>Personal Details</legend>
             <label for="fName">First Name</label>
-            <input type="text" name="fName" id="fName" placeholder="First Name" required>
+            <input type="text" name="fName" id="fName" placeholder="First Name" required pattern="[a-zA-Z ]{1,9}">
             <label for="mName">Middle Name</label>
-            <input type="text" name="mName" id="mName" placeholder="Middle Name">
+            <input type="text" name="mName" id="mName" placeholder="Middle Name" pattern="[a-zA-z ]">
             <label for="lName">Last Name</label>
-            <input type="text" name="lName" id="lName" placeholder="Last Name" required>
+            <input type="text" name="lName" id="lName" placeholder="Last Name" required pattern="[a-zA-Z ]{1-9}">
             <label for="Emial">E-Mail</label>
             <input type="email" name="email" id="email" placeholder="Email" required>
             <label for="phoneNumber">Phone Number</label>
-            <input type="text" name="phoneNumber" id="phoneNumber" placeholder="Phone Number" required>
+            <input type="text" name="phoneNumber" id="phoneNumber" placeholder="Phone Number" required pattern="[0-9]{10,10}">
             <label for="DOB">Date of Birth</label>
             <input type="date" name="DOB" id="DOB" required>
             <label for="Address">Address</label>
-            <input type="text" name="Address" id="Address" required >
+            <input type="text" name="Address" id="Address" required>
         </fieldset>
-        <fieldset>
+        <fieldset class="Educational">
             <legend>Educational details</legend>
             <label for="CollegeName">College Name</label>
             <div>
                 <select name="clgname" id="clgname" required>
-                    <option>select</option>
+                    <option selected></option>
                     <option>B M S College of Engineering</option>
                     <option>Dayananda Sagar College of Engineering</option>
                     <option>Dr. Ambedkar Institute Of Technology</option>
@@ -225,7 +244,7 @@
             <label for="yog" name="yog">Year of graduation</label>
             <div>
                 <select name="yog" id="yog" required>
-                    <option>select</option>
+                    <option selected></option>
                     <option>2017</option>
                     <option>2018</option>
                     <option>2019</option>
@@ -255,7 +274,7 @@
                 <input type="checkbox" name="MiscrosoftOffice"><label for="MiscrosoftOffice">Miscrosoft Office</label>
             </div>
             <label for="resume">Resume</label>
-            <input type="file" name="resume" id="resume">
+            <input type="file" name="resume" id="resume" required>
             <label for="others">Others</label>
             <textarea name="others" id="others" cols="30" rows="3" placeholder="....">type here</textarea>
         </fieldset>
@@ -280,6 +299,7 @@
     sub1.addEventListener("click",function(event){
         event.preventDefault();
         pop.style.visibility="hidden";
+        sub.reset();
     });
 </script>
 </body>
